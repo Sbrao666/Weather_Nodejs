@@ -9,6 +9,8 @@ const geoCode = require("../Utility/geoCode")
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 app.set('view engine', 'hbs')
 app.set('views', viewDirectoryPath)
 hbs.registerPartials(partialDirectoryPath)
@@ -76,7 +78,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("The server is up and running on the port 3000")
+app.listen(port, () => {
+    console.log("The server is up and running on the port " + port)
 })
 
